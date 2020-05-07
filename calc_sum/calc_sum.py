@@ -6,12 +6,14 @@ parser = argparse.ArgumentParser(description='Prints the sum of a column in a cs
 parser.add_argument('Path', metavar='path', type=str, help='path to csv')
 parser.add_argument('Column', metavar='column', type=str, help='column for which to caclulate sum')
 
-args = parser.parse_args()
+if __name__ == '__main__':
 
-file_path = args.Path
-column = args.Column
+    args = parser.parse_args()
 
-print(file_path)
-print(column)
+    file_path = args.Path
+    column = args.Column
 
-print(pd.read_csv(args.Path)[column].sum())
+    print(file_path)
+    print(column)
+
+    print(pd.read_csv(args.Path)[column].sum())
